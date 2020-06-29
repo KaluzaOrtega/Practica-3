@@ -11,15 +11,15 @@ function funcion()  {
         imagen:"",
     }
     datos.nombre = document.getElementById("nombre");
-    //localStorage.setItem("nombre", datos.nombre.value);
+    localStorage.setItem("nombre", datos.nombre.value);
     datos.apellidos = document.getElementById("apellido");
-    //localStorage.setItem("apellido", datos.apellidos.value);
+    localStorage.setItem("apellido", datos.apellidos.value);
     datos.correo = document.getElementById("createCorreo");
-    //localStorage.setItem("createCorreo", datos.correo.value);
+    localStorage.setItem("createCorreo", datos.correo.value);
     datos.password = document.getElementById("createPassword");
-    //localStorage.setItem("createPassword", datos.password.value); 
+    localStorage.setItem("createPassword", datos.password.value); 
     datos.fecha = document.getElementById("fecha");
-    //localStorage.setItem("fecha", datos.fecha.value);
+    localStorage.setItem("fecha", datos.fecha.value);
 
     if (document.querySelector('#Hombre').checked == true)
         datos.sexo = "Hombre";
@@ -27,7 +27,7 @@ function funcion()  {
         datos.sexo = "Mujer";
 
     datos.imagen = document.getElementById("imagen");
-    //localStorage.setItem("imagen", datos.imagen.value);
+    localStorage.setItem("imagen", datos.imagen.value);
 
-    alert(datos.nombre);
+    console.log(datos);
 }
