@@ -1,7 +1,7 @@
 "use strict"
 
-function funcion()  {
-    let datos = {
+function createUser()  {
+    let user = {
         nombre:"",
         apellidos:"",
         correo:"",
@@ -10,24 +10,24 @@ function funcion()  {
         sexo:"",
         imagen:"",
     }
-    datos.nombre = document.getElementById("nombre");
-    localStorage.setItem("nombre", datos.nombre.value);
-    datos.apellidos = document.getElementById("apellido");
-    localStorage.setItem("apellido", datos.apellidos.value);
-    datos.correo = document.getElementById("createCorreo");
-    localStorage.setItem("createCorreo", datos.correo.value);
-    datos.password = document.getElementById("createPassword");
-    localStorage.setItem("createPassword", datos.password.value); 
-    datos.fecha = document.getElementById("fecha");
-    localStorage.setItem("fecha", datos.fecha.value);
+    user.nombre = document.getElementById("nombre");
+    localStorage.setItem("nombre", user.nombre.value);
+    user.apellidos = document.getElementById("apellido");
+    localStorage.setItem("apellido", user.apellidos.value);
+    user.correo = document.getElementById("createCorreo");
+    localStorage.setItem("createCorreo", user.correo.value);
+    user.password = document.getElementById("createPassword");
+    localStorage.setItem("createPassword", user.password.value); 
+    user.fecha = document.getElementById("fecha");
+    localStorage.setItem("fecha", user.fecha.value);
 
     if (document.querySelector('#Hombre').checked == true)
-        datos.sexo = "Hombre";
+        user.sexo = "Hombre";
     else
-        datos.sexo = "Mujer";
+        user.sexo = "Mujer";
 
-    datos.imagen = document.getElementById("imagen");
-    localStorage.setItem("imagen", datos.imagen.value);
+    user.imagen = document.getElementById("imagen");
+    localStorage.setItem("imagen", user.imagen.value);
 
-    console.log(datos);
+    console.log(user);
 }
