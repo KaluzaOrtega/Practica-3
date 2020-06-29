@@ -1,15 +1,26 @@
+let user = {
+    uid:0,
+    nombre:"",
+    apellidos: "",
+    correo:"",
+    password:"",
+    fecha:"",
+    sexo:"",
+    imagen: ""
+}
+
 function userToHTML(user)   {
     let fecha=new Date(user.fecha)
     return `<div class="media">
-    <div class="media-left"><img src="`+user.image+`" alt="Cara libro" class="rounded-circle"></div>
+    <div class="media-left"><img src="`+user.imagen+`" alt="Cara libro" class="rounded-circle"></div>
     <div class="media-body col-md-6">
         <h4>`+user.nombre+' '+user.apellidos+`</h4>
         <span>
             uid: `+user.uid+` <br>
-            Correo: `+user.email+` <br>
+            Correo: `+user.correo+` <br>
             password: `+user.password+` <br>
             Fecha de nacimiento: `+fecha.toDateString()+` <br>
-            Sexo: `+(user.sexo=='H'? 'Hombre': 'Mujer')+`
+            Sexo: `+(user.sexo=='Hombre'? 'Hombre': 'Mujer')+`
         </span>          
     </div>
     <div class="media-right">
