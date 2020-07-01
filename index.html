@@ -50,7 +50,7 @@
       <br />
       <div class="w-100 register">
         ¿No tienes cuenta?
-        <a href="#" data-toggle="modal" data-target="#modelId" data-dismiss="modal">regístrate aquí</a>
+        <a href="#" data-toggle="modal" data-target="#modelId" data-dismiss="modal" onclick="cambio()">regístrate aquí</a>
       </div>
     </form>
 
@@ -73,7 +73,7 @@
           </div>
           <div class="modal-body">
             <!--Body-->
-            <form action="">
+            <form action="createUser()">
               <div class="row">
                 <div class="col-sm-6">
                   <input type="text" class="form-control" placeholder="Nombre o nombres" id="nombre" required>
@@ -131,7 +131,7 @@
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button class="btn btn-primary" type="submit" onclick="createUser()" data-dismiss="modal"> Save </button>
+                <button class="btn btn-primary" type="submit" data-dismiss="modal"> Save </button>
               </div>
             </form>
           </div>                   
