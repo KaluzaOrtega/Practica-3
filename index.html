@@ -33,11 +33,11 @@
 
     <!-- Script -->
     <script src="js/login.js"></script>
-
+    <script src="js/backend.js"></script>
     <!-- Custom styles for this template -->
     <link href="css/login.css" rel="stylesheet" />
   </head>
-  <body class="text-center">
+  <body class="text-center" onload="GetToken()">
     <form class="form-signin">
       <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
       <label for="inputEmail" class="sr-only">Email address</label>
@@ -73,19 +73,13 @@
           </div>
           <div class="modal-body">
             <!--Body-->
-            <form action="createUser()">
+            <form onsubmit="createUser()">
               <div class="row">
                 <div class="col-sm-6">
                   <input type="text" class="form-control" placeholder="Nombre o nombres" id="nombre" required>
                 </div>
                 <div class="col-sm-6">
                   <input type="text" class="form-control" placeholder="Apellidos" id="apellido" required>
-                </div>
-              </div>
-              <br>
-              <div class="row">
-                <div class="col-sm-12">
-                  <input type="number" class="form-control" placeholder="Numero de expediente" id="studentID" required>
                 </div>
               </div>
               <br>
@@ -126,12 +120,12 @@
               <br>
               <div class="row">
                 <div class="col-sm-12">
-                  <input type="url" class="form-control" placeholder="Url de imagen de perfil" id="imagen">
+                  <input type="url" class="form-control" placeholder="Url de imagen de perfil" id="imagen" required>
                 </div>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button class="btn btn-primary" type="submit" data-dismiss="modal"> Save </button>
+                <button class="btn btn-primary" type="submit" data-dismiss="modal" onclick="createUser()"> Save </button>
               </div>
             </form>
           </div>                   
