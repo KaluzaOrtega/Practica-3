@@ -1,4 +1,5 @@
 "use strict";
+var keys=""
 function cambio() {
   for (let i=0;i<document.querySelectorAll("input").lengh;i++) {
     document.querySelectorAll("input")[i].blur = function () {validacion()}
@@ -7,14 +8,13 @@ function cambio() {
 
 function createUser() {
   let user = {
-    studentID: 0,
-    nombre: "",
-    apellidos: "",
-    correo: "",
-    password: "",
-    fecha: "",
-    sexo: "",
-    imagen: "",
+    "nombre": "",
+    "apellido": "",
+    "correo": "",
+    "password": "",
+    "fecha": "",
+    "sexo": "",
+    "url": "",
   };
   if (!validacion()) {
     alert('verifica que los campos estén completos');
@@ -23,9 +23,7 @@ function createUser() {
 
   user.nombre = document.getElementById("nombre").value;
 
-  user.apellidos = document.getElementById("apellido").value;
-
-  user.studentID = document.getElementById("studentID").value;
+  user.apellido = document.getElementById("apellido").value;
 
   user.correo = document.getElementById("createCorreo").value;
 
@@ -33,23 +31,40 @@ function createUser() {
 
   user.fecha = document.getElementById("fecha").value;
 
-  if (document.querySelector("#Hombre").checked == true) user.sexo = "Hombre";
-  else user.sexo = "Mujer";
+  if (document.querySelector("#Hombre").checked == true) user.sexo = "H";
+  else user.sexo = "M";
 
-  user.imagen = document.getElementById("imagen").value;
+  user.url = document.getElementById("imagen").value;
 
   console.log(user);
+  event.preventDefault();
+  saveUsersJSON(user)
 }
 
 function validacion() {
-  var campos = document.querySelectorAll("input[required]");
+  var campos = document.querySelectorAll(".modal input[required]");
   var contador = 0;
   for(let i=0;i<campos.length;i++)  {
-    if (campos[i].innerText.trim().length>0)
+    if (campos[i].value.trim().length>0)
       contador++;
   }
   if (campos.length == contador)
-    document.querySelector("button[type=submit]").removeAttribute("disabled");
+    document.querySelector(".modal button[type=submit]").removeAttribute("disabled");
 
-  return campos.lenght == contador;
+  return campos.length == contador;
+}
+let GetToken=function(){
+  getToken(function(cbOK){
+    keys=cbOK;
+  },function(cbErr){
+
+  }) 
+}
+let saveUsersJSON = function (Usuario) {
+  postUser(Usuario,keys,function(cbOK){
+          
+  },function(cbErr){
+      alert(cbErr)
+  })
+  
 }
